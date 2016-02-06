@@ -8,15 +8,15 @@ module.exports = {
     path: path.join(__dirname, '/dist'),
     filename: 'bundle.js',
   },
+  resolve: {
+    extensions: ['', '.jsx', '.js', '.json']
+  },
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /(\.js|\.jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-            presets: ["es2015-loose", "react"]
-        }
+        loader: 'babel-loader'
       }
     ]
   }
